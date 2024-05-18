@@ -15,8 +15,7 @@ spec:
   source:
     chart: mariadb
     repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: HEAD
-    # targetRevision: 12.2.4
+    targetRevision: 18.0.6
     helm:
       releaseName: unguard-mariadb
       parameters:
