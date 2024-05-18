@@ -23,7 +23,7 @@ spec:
     - repoURL: https://github.com/Magier/Unguard-Attack-Defense-Demo.git
       targetRevision: HEAD
       ref: values
-    - repoURL: 
+    - repoURL: https://github.com/Magier/Unguard-Attack-Defense-Demo.git
       targetRevision: HEAD
       path: unguard_netpol
       # helm:
