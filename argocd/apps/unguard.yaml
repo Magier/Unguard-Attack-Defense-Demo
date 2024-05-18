@@ -8,7 +8,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
-  project: unguard
+  project: default
   destination:
     server: https://kubernetes.default.svc
     namespace: unguard

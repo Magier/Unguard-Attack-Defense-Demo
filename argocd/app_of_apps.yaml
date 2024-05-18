@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: unguard-root
+  name: bootstrap 
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: unguard
+  project: default
   source:
     path: argocd/apps
     repoURL: https://github.com/Magier/Unguard-Attack-Defense-Demo.git 
