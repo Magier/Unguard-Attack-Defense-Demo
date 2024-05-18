@@ -5,8 +5,10 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+    # targetRevision: 12.2.4
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+    app: unguard
 spec:
   project: default
   destination:
@@ -18,11 +20,16 @@ spec:
       targetRevision: 0.9.2
       helm:
         releaseName: unguard
-        # valueFiles:
-        #   - $values/unguard/values.yaml
     - repoURL: https://github.com/Magier/Unguard-Attack-Defense-Demo.git
       targetRevision: HEAD
       ref: values
+    - repoURL: 
+      targetRevision: HEAD
+      path: unguard_netpol
+      # helm:
+        # releaseName: unguard
+        # valueFiles:
+        #   - $values/unguard/values.yaml
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
