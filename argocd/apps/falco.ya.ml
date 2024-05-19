@@ -21,9 +21,9 @@ spec:
         releaseName: falco
         # valueFiles:
         #   - $values/unguard/values.yaml
-    # - repoURL: https://github.com/Magier/Unguard-Attack-Defense-Demo.git
-    #   targetRevision: HEAD
-    #   ref: values
+    - repoURL: https://github.com/Magier/Unguard-Attack-Defense-Demo.git
+      targetRevision: HEAD
+      ref: values
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
