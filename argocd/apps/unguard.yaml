@@ -11,14 +11,10 @@ metadata:
     app: unguard
 spec:
   project: default
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: unguard
   sources:
     - chart: unguard
       repoURL: https://github.com/magier/unguard-attack-defense-demo.git
       targetRevision: 0.9.2
-      path: unguard
       helm:
         releaseName: unguard
     - chart: mariadb
@@ -39,6 +35,9 @@ spec:
         # releaseName: unguard
         # valueFiles:
         #   - $values/unguard/values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: unguard
   syncPolicy:
     syncOptions:
       - CreateNamespace=false
