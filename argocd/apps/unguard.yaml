@@ -16,23 +16,32 @@ spec:
     namespace: unguard
   sources:
     - chart: unguard
-      repoURL: ghcr.io/dynatrace-oss/unguard/chart
+      repoURL: https://github.com/magier/unguard-attack-defense-demo.git
       targetRevision: 0.9.2
+      path: unguard
       helm:
         releaseName: unguard
-    - repoURL: https://github.com/Magier/Unguard-Attack-Defense-Demo.git
-      targetRevision: HEAD
-      ref: values
-    - repoURL: https://github.com/Magier/Unguard-Attack-Defense-Demo.git
-      targetRevision: HEAD
-      path: unguard_netpol
+    - chart: mariadb
+      repoURL: https://charts.bitnami.com/bitnami
+      targetRevision: 18.0.6
+      helm:
+        releaseName: unguard-mariadb
+        parameters:
+          - name: "primary.persistence.enabled"
+            value: "false"
+    # - repoURL: https://github.com/Magier/Unguard-Attack-Defense-Demo.git
+    #   targetRevision: HEAD
+    #   ref: values
+    # - repoURL: https://github.com/magier/unguard-attack-defense-demo.git
+    #   targetRevision: HEAD
+    #   path: unguard_netpol
       # helm:
         # releaseName: unguard
         # valueFiles:
         #   - $values/unguard/values.yaml
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
+      - CreateNamespace=false
     automated:
       selfHeal: true
-      prune: true
+      # prune: true
