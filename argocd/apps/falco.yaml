@@ -9,7 +9,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
-  project: falco
+  project: default
   destination:
     server: https://kubernetes.default.svc
     namespace: falco
