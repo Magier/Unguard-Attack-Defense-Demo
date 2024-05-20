@@ -60,3 +60,9 @@ spec:
           imagePullPolicy: {{.Values.envoyProxy.deployment.container.image.pullPolicy}}
           ports:
             {{- .Values.envoyProxy.deployment.container.ports | toYaml | nindent 12 }}
+          readinessProbe:
+            httpGet:
+              path: "/healthz"
+              port: 8081
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
