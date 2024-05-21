@@ -1,0 +1,9 @@
+driver:
+  kind: ebpf
+tty: true
+falcosidekick:
+  enabled: true
+  webui:
+    enabled: true
+  config:
+    customfields: "conf:sf24"
